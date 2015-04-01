@@ -1,7 +1,12 @@
 body {
-  padding-top: 50px;
+  min-height: 2000px;
+  padding-top: 70px;
 }
-.starter-template {
-  padding: 40px 15px;
-  text-align: center;
+.login-item {
+	margin-bottom: 15px;
+	display: block;
+	width: 100%;
+}
+.login-box {
+	padding: 15px;
 }
