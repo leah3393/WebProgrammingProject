@@ -1,6 +1,12 @@
+login = function(){
+	var username = $('#username').val();
+	var password = $('#password').val();
+	//alert(username + password);
+	$.post("./../php/login.php", {"username": username}, function(data){
+		alert(data);
+	});
+}
+
 $(document).ready(function(){
-    //Handles menu drop down
-    $('.dropdown-menu').find('form').click(function (e) {
-        e.stopPropagation();
-    });
+	$("#sign-in").click(login);
 });
