@@ -1,9 +1,15 @@
 login = function(){
 	var username = $('#username').val();
 	var password = $('#password').val();
-	//alert(username + password);
-	$.post("./../php/login.php", {"username": username}, function(data){
-		alert(data);
+	$.post("resources/php/login.php", {"username": username, "password": password}, function(data){
+		var worked = data;
+		alert(worked);
+		if(worked == 'true'){
+			$('#fail').html("success");
+		}
+		else{
+			$('#fail').html("fail");
+		}
 	});
 }
 
