@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+		<meta name="description" content="">
+		<meta name="author" content="">
+		<link rel="icon" type="image/png" href="resources/images/icon.png" />
+
+		<title>Online Realtor</title>
+		<link href="resources/css/bootstrap.min.css" rel="stylesheet">
+		<link href="resources/css/index.css" rel="stylesheet">
+	</head>
+
+	<body>
+
+		<!-- Fixed navbar -->
+		<nav class="navbar navbar-default navbar-fixed-top">
+			<div class="container">
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+						<span class="sr-only">Toggle navigation</span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+					<a class="navbar-brand" href="#">Online Realtor</a>
+				</div>
+				<div id="navbar" class="navbar-collapse collapse">
+					<ul class="nav navbar-nav navbar-right">
+						<li class="dropdown" id="user" style="display:none"><a href="#">Username</a></li>
+						<li class="dropdown" id="dropdown-login" style="display:none">
+							<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Login <span class="caret"></span></a>
+							<ul class="dropdown-menu" role="menu">
+								<form id="loginform" class="navbar-form" method="post">
+									<div class="form-group">
+									    <label for="email">Email</label>
+									    <input type="email" class="form-control login-item" id="email" name="email" placeholder="email">
+									</div>
+									<div class="form-group">
+									    <label for="password">Password</label>
+									    <input type="password" class="form-control login-item" id="password" name="password" placeholder="password">
+									</div>
+									
+									<div >
+									    <label>
+									      <input type="checkbox"> Remember Me
+									    </label>
+									</div>
+									<div>
+										<input class="btn btn-primary btn-block" type="submit" id="sign-in" value="Sign In">
+									</div>
+									<div id="fail"></div>
+								</form>
+							</ul>
+						</li>
+						<li id="register" style="display:none"><a href="register.html">Register</a></li>
+					</ul>
+				</div><!--/.nav-collapse -->
+			</div>
+		</nav>
+
+		<div class="container">
+			<h1>What Home are you Looking for?</h1>
+			<form id="homeform" method="post" accept-charset="UTF-8">
+				<div class="form-group">
+				    <div><label><h3>Location:</h3></label></div>
+				    <input type="text" id="buyer-fname" name="bfname" placeholder="city, state">
+				</div>
+				<div class="form-group">
+				    <div><label><h3>Size:</h3></label></div>
+				   	<label>Beds</label>
+				    <select>
+				    	<option value="0">0+</option>
+						<option value="1">1+</option>
+						<option value="2">2+</option>
+						<option value="3">3+</option>
+						<option value="4">4+</option>
+						<option value="5">5+</option>
+						<option value="6">6+</option>
+					</select>
+					<div>
+						<label>SqFt</label>
+				    	<input type="text" id="sqftmin" name="sqftmin" placeholder="min">
+				    	<input type="text" id="sqftmax" name="sqftmax" placeholder="max">
+					</div>
+				</div>
+				<div class="form-group">
+				    <div><label><h3>Type:</h3></label></div>
+					<label>
+						<input type="checkbox" value="house">
+						House
+					</label>
+					<label>
+						<input type="checkbox" value="condo">
+						Condo
+					</label>
+					<label>
+						<input type="checkbox" value="apartment">
+						Apartment
+					</label>
+					<label>
+						<input type="checkbox" value="townhome">
+						Town Home
+					</label>
+					<label>
+						<input type="checkbox" value="manufactured">
+						Manufactured
+					</label>
+					<label>
+						<input type="checkbox" value="lotland">
+						Lots/Land
+					</label>
+				</div>
+				<div class="form-group">
+					<div><label><h3>Price Range:</h3></label></div>
+				    <label>Min</label>
+				    <select>
+				    	<option value="0">0+</option>
+						<option value="100">100+</option>
+						<option value="200">200+</option>
+						<option value="300">300+</option>
+						<option value="400">400+</option>
+						<option value="500">500+</option>
+						<option value="600">600+</option>
+						<option value="700">700+</option>
+						<option value="800">800+</option>
+						<option value="900">900+</option>
+					</select>
+					<label>Max</label>
+				    <select>
+						<option value="any">Any</option>
+						<option value="100">100</option>
+						<option value="200">200</option>
+						<option value="300">300</option>
+						<option value="400">400</option>
+						<option value="500">500</option>
+						<option value="600">600</option>
+						<option value="700">700</option>
+						<option value="800">800</option>
+						<option value="900">900</option>
+					</select>
+				</div>
+				<div>
+					<button class="btn btn-lg btn-primary btn-block" type="submit" id="save">Save</button>
+					<button class="btn btn-lg btn-primary btn-block" type="button" id="skip">Skip</button>
+				</div>
+			</form>
+		</div> <!-- /container -->
+
+
+		<!-- Bootstrap core JavaScript
+		================================================== -->
+		<!-- Placed at the end of the document so the pages load faster -->
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+		<script src="resources/js/bootstrap.min.js"></script>
+		<script src="resources/js/cookie/jquery.cookie.js"></script>
+		<script src="resources/js/login.js"></script>
+	</body>
+</html>

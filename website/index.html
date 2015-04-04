@@ -30,32 +30,33 @@
 				</div>
 				<div id="navbar" class="navbar-collapse collapse">
 					<ul class="nav navbar-nav navbar-right">
-						<li class="dropdown">
-						<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Login <span class="caret"></span></a>
-						<ul class="dropdown-menu" role="menu">
-							<form class="navbar-form" accept-charset="UTF-8">
-								<div class="form-group">
-								    <label for="username">Username</label>
-								    <input type="username" class="form-control login-item" id="username" placeholder="username">
-								</div>
-								<div class="form-group">
-								    <label for="password">Password</label>
-								    <input type="password" class="form-control login-item" id="password" placeholder="password">
-								</div>
-								
-								<div >
-								    <label>
-								      <input type="checkbox"> Remember Me
-								    </label>
-								</div>
-								<div>
-									<input class="btn btn-primary btn-block" type="submit" id="sign-in" value="Sign In">
-								</div>
-								<div id="fail"></div>
-							</form>
-						</ul>
+						<li class="dropdown" id="user" style="display:none"><a href="#">Username</a></li>
+						<li class="dropdown" id="dropdown-login" style="display:none">
+							<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Login <span class="caret"></span></a>
+							<ul class="dropdown-menu" role="menu">
+								<form id="loginform" class="navbar-form" method="post">
+									<div class="form-group">
+									    <label for="email">Email</label>
+									    <input type="email" class="form-control login-item" id="email" name="email" placeholder="email">
+									</div>
+									<div class="form-group">
+									    <label for="password">Password</label>
+									    <input type="password" class="form-control login-item" id="password" name="password" placeholder="password">
+									</div>
+									
+									<div >
+									    <label>
+									      <input type="checkbox"> Remember Me
+									    </label>
+									</div>
+									<div>
+										<input class="btn btn-primary btn-block" type="submit" id="sign-in" value="Sign In">
+									</div>
+									<div id="fail"></div>
+								</form>
+							</ul>
 						</li>
-						<li><a href="register.html">Register</a></li>
+						<li id="register" style="display:none"><a href="register.html">Register</a></li>
 					</ul>
 				</div><!--/.nav-collapse -->
 			</div>
@@ -76,6 +77,7 @@
 		<!-- Placed at the end of the document so the pages load faster -->
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 		<script src="resources/js/bootstrap.min.js"></script>
+		<script src="resources/js/cookie/jquery.cookie.js"></script>
 		<script src="resources/js/login.js"></script>
 	</body>
 </html>

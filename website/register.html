@@ -24,18 +24,26 @@
 
 			<div class="tab-content">
 				<div class="tab-pane active" id="buyer">
-					<form class="form-register" method="post" action="register" accept-charset="UTF-8">
+					<form id="buyerform" class="form-register" method="post" accept-charset="UTF-8">
 						<div class="form-group">
-						    <label for="username">Username</label>
-						    <input type="email" class="form-control login-item" id="username" placeholder="username">
+						    <label for="buyer-fname">First Name</label>
+						    <input required type="text" class="form-control login-item" id="buyer-fname" name="bfname" placeholder="First">
+						</div>
+						<div class="form-group">
+						    <label for="buyer-lname">Last Name</label>
+						    <input required type="text" class="form-control login-item" id="buyer-fname" name="blname" placeholder="Last">
+						</div>
+						<div class="form-group">
+						    <label for="email">Email</label>
+						    <input required type="email" class="form-control login-item" id="buyer-email" name="bemail" placeholder="email">
 						</div>
 						<div class="form-group">
 						    <label for="password">Password</label>
-						    <input type="password" class="form-control login-item" id="password" placeholder="password">
+						    <input required type="password" class="form-control login-item" id="buyer-password" name="bpassword" placeholder="password">
 						</div>
 						<div class="form-group">
 						    <label for="confirm-password">Confirm Password</label>
-						    <input type="password" class="form-control login-item" id="confirm-password" placeholder="confirm password">
+						    <input required type="password" class="form-control login-item" id="buyer-confirm-password" name="bconfirm-password" placeholder="confirm password">
 						</div>
 						<div >
 						    <label>
@@ -48,18 +56,30 @@
 					</form>
 				</div>
 				<div class="tab-pane" id="seller">
-					<form class="form-register" method="post" action="register" accept-charset="UTF-8">
+					<form id="sellerform" class="form-register" method="post" accept-charset="UTF-8">
 						<div class="form-group">
-						    <label for="username">Username</label>
-						    <input type="email" class="form-control login-item" id="username" placeholder="username">
+						    <label for="seller-fname">First Name</label>
+						    <input required type="text" class="form-control login-item" id="seller-fname" name="sfname" placeholder="First">
+						</div>
+						<div class="form-group">
+						    <label for="seller-lname">Last Name</label>
+						    <input required type="text" class="form-control login-item" id="seller-fname" name="slname" placeholder="Last">
+						</div>
+						<div class="form-group">
+						    <label for="seller-company">Company</label>
+						    <input required type="text" class="form-control login-item" id="seller-company" name="scompany" placeholder="Company">
+						</div>
+						<div class="form-group">
+						    <label for="email">Email</label>
+						    <input required type="email" class="form-control login-item" id="seller-email" name="semail" placeholder="email">
 						</div>
 						<div class="form-group">
 						    <label for="password">Password</label>
-						    <input type="password" class="form-control login-item" id="password" placeholder="password">
+						    <input required type="password" class="form-control login-item" id="seller-password" name="spassword" placeholder="password">
 						</div>
 						<div class="form-group">
 						    <label for="confirm-password">Confirm Password</label>
-						    <input type="password" class="form-control login-item" id="confirm-password" placeholder="confirm password">
+						    <input required type="password" class="form-control login-item" id="seller-confirm-password" name="sconfirm-password" placeholder="confirm password">
 						</div>
 						<div >
 						    <label>
@@ -74,12 +94,12 @@
 			</div>
 		</div> <!-- /container -->
 
-
 		<!-- Bootstrap core JavaScript
 		================================================== -->
 		<!-- Placed at the end of the document so the pages load faster -->
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 		<script src="resources/js/bootstrap.min.js"></script>
+		<script src="resources/js/cookie/jquery.cookie.js"></script>
 		<script src="resources/js/register.js"></script>
 	</body>
 </html>
