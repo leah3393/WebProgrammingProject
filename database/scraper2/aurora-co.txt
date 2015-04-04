@@ -1,0 +1,140 @@
+/homedetails/10301-E-Evans-Ave-APT-123-Denver-CO-80247/13054541_zpid/
+13054541
+10301 E Evans Ave APT 123
+Denver
+CO
+80247
+
+/homedetails/1789-Oakland-St-Aurora-CO-80010/13021749_zpid/
+13021749
+1789 Oakland St
+Aurora
+CO
+80010
+
+/homedetails/1652-S-Buckley-Way-Aurora-CO-80017/2103438069_zpid/
+2103438069
+1652 S. Buckley Way
+AURORA
+CO
+80017
+
+/homedetails/17845-E-Bethany-Pl-Aurora-CO-80013/13085989_zpid/
+13085989
+17845 E Bethany Pl
+Aurora
+CO
+80013
+
+/homedetails/12014-E-Maple-Ave-Aurora-CO-80012/13038837_zpid/
+13038837
+12014 E Maple Ave
+Aurora
+CO
+80012
+
+/homedetails/1749-Danube-St-Aurora-CO-80011/13012913_zpid/
+13012913
+1749 Danube St
+Aurora
+CO
+80011
+
+/homedetails/24671-E-Kansas-Cir-Aurora-CO-80018/58888459_zpid/
+58888459
+24671 E Kansas Cir
+Aurora
+CO
+80018
+
+/homedetails/1309-S-Kramer-Ct-Aurora-CO-80012/13047623_zpid/
+13047623
+1309 S Kramer Ct
+Aurora
+CO
+80012
+
+/homedetails/2557-S-Memphis-Way-Aurora-CO-80013/13080423_zpid/
+13080423
+2557 S Memphis Way
+Aurora
+CO
+80013
+
+/homedetails/16166-E-Exposition-Dr-Aurora-CO-80017/13065111_zpid/
+13065111
+16166 E Exposition Dr
+Aurora
+CO
+80017
+
+/homedetails/16514-E-Bails-Pl-Aurora-CO-80017/13071882_zpid/
+13071882
+16514 E Bails Pl
+Aurora
+CO
+80017
+
+/homedetails/764-Galena-St-Aurora-CO-80010/13036958_zpid/
+13036958
+764 Galena St
+Aurora
+CO
+80010
+
+/homedetails/4231-S-Halifax-Way-Aurora-CO-80013/13095038_zpid/
+13095038
+4231 S Halifax Way
+Aurora
+CO
+80013
+
+/homedetails/12020-E-Jewell-Ave-Aurora-CO-80012/13052634_zpid/
+13052634
+12020 E Jewell Ave
+Aurora
+CO
+80012
+
+/community/blackstone/2102812585_zpid/
+2102812585
+
+/community/blackstone/2102812586_zpid/
+2102812586
+
+/community/blackstone/2102812587_zpid/
+2102812587
+
+/community/blackstone/2102812578_zpid/
+2102812578
+
+/community/blackstone/2102812590_zpid/
+2102812590
+
+/community/blackstone/2102812582_zpid/
+2102812582
+
+/community/blackstone/2102812584_zpid/
+2102812584
+
+/homedetails/18155-E-Cornell-Pl-Aurora-CO-80013/68046877_zpid/
+68046877
+18155 E Cornell Pl
+Aurora
+CO
+80013
+
+/homedetails/18987-E-Mercer-Dr-Aurora-CO-80013/13094240_zpid/
+13094240
+18987 E Mercer Dr
+Aurora
+CO
+80013
+
+/homedetails/4001-S-Kirk-Way-Aurora-CO-80013/13092432_zpid/
+13092432
+4001 S Kirk Way
+Aurora
+CO
+80013
+
