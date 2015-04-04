@@ -1,0 +1,10 @@
+python fetchpictures.py 15282100.xml
+python fetchpictures.py 15301103.xml
+python fetchpictures.py 15312232.xml
+python fetchpictures.py 15323973.xml
+python fetchpictures.py 2052895.xml
+python fetchpictures.py 2063262.xml
+python fetchpictures.py 2102784922.xml
+python fetchpictures.py 2102855532.xml
+python fetchpictures.py 2102855543.xml
+python fetchpictures.py 2102855569.xml
