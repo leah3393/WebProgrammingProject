@@ -64,10 +64,14 @@
 
 		<div class="container">
 			<div class="jumbotron">
-				<h1>Online Realtor</h1>
-				<p>Welcome to the online realtor! If you are in search of your first house, a private getaway flat, or even an investment property, you are in the right place! Login to save your searches or favorite homes.</p>
-					<a class="btn btn-lg btn-primary" href="#" role="button">Find your new home &raquo;</a>
-				</p>
+					<form id="homesearchform" action="search-result.html" method="post" accept-charset="UTF-8">
+						<div class="form-group input-group input-group-lg">
+					    	<input type="text" class="form-control" placeholder="Search for...">
+					      	<span class="form-group input-group-btn">
+					        	<button class="btn btn-default" type="submit">Go!</button>
+					     	</span>
+					    </div><!-- /input-group -->
+					</form>
 			</div>
 		</div> <!-- /container -->
 

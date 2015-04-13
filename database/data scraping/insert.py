@@ -8,8 +8,22 @@ def create_query(entry):
 	first = True
 
 	for k in entry.keys():
-		if(k == "type" or k == "seller"):
+		if(k == "seller"):
 			pass
+		elif k == "type":
+			columns += ", typeID"
+			if entry[k] == "SingleFamily":
+				values += ", '0'"
+			elif entry[k] == "Condominium":
+				values += ", '1'"
+			elif entry[k] == "MultiFamily2To4" or entry[k] == "MultiFamily5Plus" or entry[k] == "Cooperative":
+				values += ", '2'"
+			elif entry[k] == "Townhouse":
+				values += ", '3'"
+			elif entry[k] == "VacantResidentialLand":
+				values += ", '5'"
+			else:
+				values += ", '4'"
 		else:
 			clean1 = entry[k].replace('\n', ' ')
 			clean2 = clean1.replace("'", "''")
@@ -25,7 +39,7 @@ def create_query(entry):
 	return sql
 
 def readobjects():
-	dbfile = "data/database.json"
+	dbfile = "../data/database.json"
 
 	db = []
 
@@ -37,7 +51,7 @@ def readobjects():
 	return db
 
 def main():
-	sqlfile = "InsertProperties.sql"
+	sqlfile = "../InsertProperties.sql"
 	with open(sqlfile, 'wb') as f:
 		f.write("USE realestate_db;\n")
 		db = readobjects()

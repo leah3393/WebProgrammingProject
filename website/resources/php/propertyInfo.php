@@ -11,11 +11,11 @@
 		<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
 		<meta name=\"description\" content=\"\">
 		<meta name=\"author\" content=\"\">
-		<link rel=\"icon\" type=\"image/png\" href=\"resources/images/icon.png\" />
+		<link rel=\"icon\" type=\"image/png\" href=\"../images/icon.png\" />
 
 		<title>Online Realtor</title>
-		<link href=\"website/resources/css/bootstrap.min.css\" rel=\"stylesheet\">
-		<link href=\"website/resources/css/index.css\" rel=\"stylesheet\">
+		<link href=\"../css/bootstrap.min.css\" rel=\"stylesheet\">
+		<link href=\"../css/index.css\" rel=\"stylesheet\">
 	</head>
 	<body>
 	
@@ -65,7 +65,7 @@
 			</div>
 		</nav>";
 		
-		$con = mysqli_connect('localhost', 'root', '', 'realestate_db');
+		$con = mysqli_connect('localhost', 'root', 'root', 'realestate_db');
 		if(!$con)
 		{
 			die('Could not connect: ' . mysqli_error($con));
@@ -98,9 +98,9 @@
 		================================================== -->
 		<!-- Placed at the end of the document so the pages load faster -->
 		<script src=\"https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js\"></script>
-		<script src=\"website/resources/js/bootstrap.min.js\"></script>
-		<script src=\"website/resources/js/cookie/jquery.cookie.js\"></script>
-		<script src=\"website/resources/js/login.js\"></script>
+		<script src=\"../js/bootstrap.min.js\"></script>
+		<script src=\"../js/cookie/jquery.cookie.js\"></script>
+		<script src=\"../js/login.js\"></script>
 	</body>
 </html>";
 	}
