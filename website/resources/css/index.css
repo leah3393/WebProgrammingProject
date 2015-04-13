@@ -1,6 +1,6 @@
 body {
-  min-height: 2000px;
-  padding-top: 70px;
+  min-height: 720px;
+  padding-top: 50px;
 }
 .login-item {
 	margin-bottom: 15px;
@@ -9,4 +9,17 @@ body {
 }
 .login-box {
 	padding: 15px;
+}
+.carousel-inner > .item > img {
+    margin: 0 auto;
+}
+
+.overlay { 
+  color:#fff;
+  position:absolute;
+  z-index:12;
+  top:50%;
+  left:0;
+  width:100%;
+  text-align:center;
 }
