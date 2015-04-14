@@ -1,26 +1,38 @@
 <?php 
-	define(HOST, "localhost");
-	define(USER, "root");
-	define(PW, "root");
-	define(DB, "realestate_db");
-
-	$connect = mysql_connect(HOST,USER,PW) or die('Could not connect to mysql server.');
-
-	mysql_select_db(DB, $connect) or die('Could not select database.');
+	$con = mysqli_connect('localhost', 'root', '', 'realestate_db');
+		if(!$con)
+		{
+			die('Could not connect: ' . mysqli_error($con));
+		}		
+		mysqli_select_db($con, "realestate_db");
 
 	$email = test_input($_POST["email"]);
 	$password = test_input($_POST["password"]);
 
 	$query = "SELECT * FROM BUYER WHERE BUYER.email = '" . $email . "'";
+	$querySeller = "SELECT * FROM SELLER WHERE SELLER.email = '" . $email . "'";
 
-	$result = mysql_query($query);
+	$result = mysqli_query($con, $query);
+	$resultSeller = mysqli_query($con, $querySeller);
 
-	if(mysql_num_rows($result) > 0){
-		$buyer = mysql_fetch_object($result);
-		if($buyer->password == $password){
-			echo '{"login": true, "buyer": {"bid": ' . $buyer->bid . ', "fname": "' . $buyer->fname .'", "lname": "' . $buyer->lname . '"}}';
+	if(mysqli_num_rows($result) > 0){
+		$buyer = mysqli_fetch_array($result);
+		if($buyer['password'] == $password){
+			echo '{"login": true, "buyer": {"isBuyer": "true", "bid": ' . $buyer['bid'] . ', "fname": "' . $buyer['fname'] .'", "lname": "' . $buyer['lname'] . '"}}';
 		}	
 		else{
+			echo '{"login": false}';
+		}
+	}
+	elseif(mysqli_num_rows($resultSeller) > 0)
+	{
+		$seller = mysqli_fetch_array($resultSeller);
+		if($seller['password'] == $password)
+		{
+			echo '{"login": true, "buyer": {"isBuyer": "false", "bid": ' . $seller['sid'] . ', "fname": "' . $seller['fname'] .'", "lname": "' . $seller['lname'] . '"}}';
+		}	
+		else
+		{
 			echo '{"login": false}';
 		}
 	}

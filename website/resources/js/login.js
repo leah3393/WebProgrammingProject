@@ -9,11 +9,12 @@ login = function(e) {
         	if (login["login"]) {
         		$("#fail").hide();
             	user = login["buyer"];
+				isBuyer = user["isBuyer"];
             	fname = user["fname"];
 				lname = user["lname"];
 				bid = user["bid"];
 				token = 128;
-				createLoginCookies(bid, token, fname);
+				createLoginCookies(bid, token, fname, isBuyer);
             	setupPage(fname);
           	}
           	else {
@@ -36,16 +37,18 @@ function setupPage(fname){
 	$("#user").show();
 }
 
-function createLoginCookies(id, token, fname){
+function createLoginCookies(id, token, fname, isBuyer){
 	$.cookie('userid', id, { path: '/' });
 	$.cookie('fname', fname, { path: '/'});
 	$.cookie('token', token, { path: '/'});
+	$.cookie('isBuyer', isBuyer, {path: '/'});
 }
 
 logout = function(){
 	$.removeCookie('userid', { path: '/' });
 	$.removeCookie('fname', { path: '/'});
 	$.removeCookie('token', { path: '/'});
+	$.removeCookie('isBuyer', {path: '/'});
 
 	showLogin();
 

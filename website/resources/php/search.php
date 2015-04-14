@@ -1,31 +1,30 @@
 <?php 
-	define(HOST, "localhost");
-	define(USER, "root");
-	define(PW, "root");
-	define(DB, "realestate_db");
-
-	$connect = mysql_connect(HOST,USER,PW) or die('Could not connect to mysql server.');
-
-	mysql_select_db(DB, $connect) or die('Could not select database.');
+	$con = mysqli_connect('localhost', 'root', '', 'realestate_db');
+	if(!$con)
+	{
+		die('Could not connect: ' . mysqli_error($con));
+	}		
+	mysqli_select_db($con, "realestate_db");
 
 	$query = make_query();
 
 	//echo $query;
 
-	$result = mysql_query($query);
+	$result = mysqli_query($con, $query);
 
 	$json = '{"properties": [';
 	$first = True;
 
-	if(mysql_num_rows($result) > 0){
-		while($row = mysql_fetch_object($result)){
-			$photo = get_photo($row->pid);
+	if(mysqli_num_rows($result) > 0){
+		while($row = mysqli_fetch_array($result))
+		{
+			$photo = get_photo($row['pid']);
 			if($first){
-				$json .= '{"pid": "'.$row->pid.'", "addr": "'.$row->addr.'", "city": "'.$row->city.'", "state": "'.$row->state.'", "price": "'.$row->price.'", "photo": "'.$photo.'"}';
+				$json .= '{"pid": "'.$row['pid'].'", "addr": "'.$row['addr'].'", "city": "'.$row['city'].'", "state": "'.$row['state'].'", "price": "'.$row['price'].'", "photo": "'.$photo.'"}';
 				$first = False;
 			}
 			else{
-				$json .= ',{"pid": "'.$row->pid.'", "addr": "'.$row->addr.'", "city": "'.$row->city.'", "state": "'.$row->state.'", "price": "'.$row->price.'", "photo": "'.$photo.'"}';
+				$json .= ',{"pid": "'.$row['pid'].'", "addr": "'.$row['addr'].'", "city": "'.$row['city'].'", "state": "'.$row['state'].'", "price": "'.$row['price'].'", "photo": "'.$photo.'"}';
 			}
 		}
 	}
