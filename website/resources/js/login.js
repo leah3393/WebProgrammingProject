@@ -51,7 +51,7 @@ function setupPage(fname, type){
 		$("#user").show();
 	}
 	else{
-		userhtml = '<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Welcome, '+fname+'<span class="caret"></span></a><ul class="dropdown-menu" role="menu"><li><a href="properties.html">Seller Portal</a></li><li><a href="account-info.html">Account Information</a></li><li><a id="logout" href="#">Logout</a></li></ul>';
+		userhtml = '<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Welcome, '+fname+'<span class="caret"></span></a><ul class="dropdown-menu" role="menu"><li><a href="portal.html">Seller Portal</a></li><li><a href="sales-account-info.html">Account Information</a></li><li><a id="logout" href="#">Logout</a></li></ul>';
 	
 		$("#user").html(userhtml);
 		$("#user").show();
