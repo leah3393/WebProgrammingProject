@@ -1,7 +1,9 @@
 <?php
+	$pass = "root"; // <-- Toggle
+	//$pass = ""; // <-- Toggle
 	if ($_SERVER['REQUEST_METHOD'] == "POST")
 	{	
-		$con = mysqli_connect('localhost', 'root', '', 'realestate_db');
+		$con = mysqli_connect('localhost', 'root', $pass, 'realestate_db');
 		if(!$con)
 		{
 			die('Could not connect: ' . mysqli_error($con));

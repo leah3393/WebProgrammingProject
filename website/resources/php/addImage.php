@@ -11,9 +11,11 @@
 		</form>
 		
 	<?php
+		$pass = "root"; // <-- Toggle
+		//$pass = ""; // <-- Toggle
 		if(isset($_POST['submit']))
 		{
-			$con = mysqli_connect('localhost', 'root', '', 'realestate_db');
+			$con = mysqli_connect('localhost', 'root', $pass, 'realestate_db');
 			mysqli_select_db($con, "realestate_db");
 			
 			$imageName = mysqli_real_escape_string($con, $_FILES["image"]["name"]);
