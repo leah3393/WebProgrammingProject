@@ -2,11 +2,11 @@ $(document).ready(function()
 {
 	var buyer_seller;
 	var sellerID = 0;
-	cookie1 = $.cookie('isBuyer');
+	cookie1 = $.cookie('type');
 	cookie2 = $.cookie('userid');
 	if(cookie1 != undefined)
 	{
-		if(cookie1 == "true") buyer_seller = "buyer";
+		if(cookie1 == "buyer") buyer_seller = "buyer";
 		else 
 		{
 			buyer_seller = "seller";

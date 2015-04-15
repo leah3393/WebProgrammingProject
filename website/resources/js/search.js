@@ -30,7 +30,7 @@ search = function(e) {
       success: function(data){
        		var result = jQuery.parseJSON(data);
           var properties = result["properties"];
-          var html = '<h3>Search Results:</h3>';
+          var html = '<div class="page-header"><h1>Search Results:</h1></div>';
           if(properties.length == 0){
             html += '<p>No results to show. Try a different search.</p>';
           }
@@ -50,7 +50,7 @@ search = function(e) {
             html += '<div class="row"><div class="col-md-8 col-md-offset-2 col-lg-8 col-lg-offset-2"><div class="thumbnail"><img src="'+photo+'" alt="'+fullAddr+'"><div class="caption"><h3>'+fullAddr+'</h3><h4>Price: $'+price+'</h4><form action="resources/php/searchTest.php" method="POST"><input type="hidden" value="'+pid+'" name="pid" /><button class="btn btn-real" type="submit">View More Details</button>';
 
             if(true){
-              html += '<img src="resources/images/verified.png" class="verified" alt="verified">';
+              html += '<img src="resources/images/verified.png" class="verified" alt="verified" title="Seller has been verified.">';
             }
 
             html += '</form></div></div></div></div>';

@@ -55,12 +55,12 @@ body {
   background-color: #d7d7d7;
 }
 .navbar-default .navbar-nav > li > .dropdown-menu > li > a {
-  color: #d7d7d7;
+  color: #000000;
 }
 .navbar-default .navbar-nav > li > .dropdown-menu > li > a:hover,
 .navbar-default .navbar-nav > li > .dropdown-menu > li > a:focus {
-  color: #d7d7d7;
-  background-color: #d7d7d7;
+  color: #ffffff;
+  background-color: #323a45;
 }
 .navbar-default .navbar-nav > li > .dropdown-menu > li > .divider {
   background-color: #d7d7d7;
@@ -142,4 +142,48 @@ a, a:hover, a:focus{
 	background: #323a45;
 	color: #ffffff;
 }
-
+.left-menu{
+	border-color: #d7d7d7;
+	background: #d7d7d7;
+	color: #323a45;
+	padding-left: 20px;
+	padding-right: 20px;
+	padding-top: 50px;
+	padding-bottom: 300px;
+	text-align: center;
+}
+.no-lr-padding{
+	padding-left: 0px;
+	padding-right: 0px;
+}
+.right-area{
+	border-color: #ffffff;
+	background: #ffffff;
+	color: #323a45;
+	padding-left: 20px;
+	padding-right: 20px;
+}
+.house{
+	height: 200px;
+	width: 200px;
+	margin: auto;
+}
+.btn-account:hover, .btn-account:focus{
+	border-color: #fcc550;
+	background: #fcc550;
+	color: #323a45;
+}
+.btn-account{
+	border-color: #fff;
+	background: #fff;
+	color: #323a45;
+}
+.account-menu{
+	position:fixed;
+	left:0;
+	z-index: 8;
+	text-align: center;
+}
+.hidden-pane{
+	display:none;
+}
