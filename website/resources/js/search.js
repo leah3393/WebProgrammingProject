@@ -79,7 +79,7 @@ function checksearch(){
      var paramValue = keyValuePair.replace(/^[^=]*\=/, ""); // some decoding is probably necessary
      GET[paramName] = paramValue;
   });
-  if(GET["request"] != null){
+  if(GET["request"] != null %% GET["request"] != ""){
     var request = GET["request"];
     request = request.replace("%2C", ",");
     request = request.replace("+"," ");
