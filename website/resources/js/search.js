@@ -82,7 +82,7 @@ function checksearch(){
   if(GET["request"] != null){
     var request = GET["request"];
     request = request.replace("%2C", ",");
-    request = request.replace("+","");
+    request = request.replace("+"," ");
     var fd = {
       'location': request
     };
