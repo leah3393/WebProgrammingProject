@@ -187,3 +187,11 @@ a, a:hover, a:focus{
 .hidden-pane{
 	display:none;
 }
+.reg-start-form{
+	border-color: #d7d7d7;
+	background: #d7d7d7;
+	color: #323a45;
+	padding: 20px;
+	border-radius: 4px;
+	margin-bottom: 20px;
+}

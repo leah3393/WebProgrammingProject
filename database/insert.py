@@ -1,7 +1,7 @@
 import yaml
 
 
-def create_query(entry):
+def create_query(entry,seller):
 	columns = ""
 	values = ""
 
@@ -9,7 +9,8 @@ def create_query(entry):
 
 	for k in entry.keys():
 		if(k == "seller"):
-			pass
+			columns += ", sellerID"
+			values += ", " + str(seller[entry[k]])
 		elif k == "type":
 			columns += ", typeID"
 			if entry[k] == "SingleFamily":
@@ -39,7 +40,7 @@ def create_query(entry):
 	return sql
 
 def readobjects():
-	dbfile = "../data/database.json"
+	dbfile = "data/database.json"
 
 	db = []
 
@@ -51,12 +52,33 @@ def readobjects():
 	return db
 
 def main():
-	sqlfile = "../InsertProperties.sql"
+	sqlfile = "InsertProperties.sql"
+
+	filename = "data/database.json"
+
+	data = []
+
+	with open(filename, 'rb') as f:
+		for line in f.readlines():
+			e = yaml.load(line)
+			data.append(e)
+
+	seller = {}
+
+	sellerID = 0
+
+	for e in data:
+		for k in e.keys():
+			if(k == "seller"):
+				if e[k] not in seller:
+					seller[e[k]] = sellerID
+					sellerID += 1
+
 	with open(sqlfile, 'wb') as f:
 		f.write("USE realestate_db;\n")
 		db = readobjects()
 		for e in db:
-			query = create_query(e)
+			query = create_query(e, seller)
 			f.write(query + "\n")
 
 main()

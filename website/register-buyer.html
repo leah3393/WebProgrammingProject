@@ -63,89 +63,128 @@
 		</nav>
 
 		<div class="container">
-			<h1>What Home are you Looking for?</h1>
-			<form id="homeform" method="post" accept-charset="UTF-8">
+			<div class="page-header">
+				<h1>What Home are you Looking for? <small>Enter in your preferences to get started.</small></h1>
+			</div>
+			<form id="homeform" method="post" action="resources/php/buyer.php" class="reg-start-form" accept-charset="UTF-8">
 				<div class="form-group">
-				    <div><label><h3>Location:</h3></label></div>
-				    <input type="text" id="buyer-fname" name="bfname" placeholder="city, state">
-				</div>
-				<div class="form-group">
-				    <div><label><h3>Size:</h3></label></div>
-				   	<label>Beds</label>
-				    <select>
-				    	<option value="0">0+</option>
-						<option value="1">1+</option>
-						<option value="2">2+</option>
-						<option value="3">3+</option>
-						<option value="4">4+</option>
-						<option value="5">5+</option>
-						<option value="6">6+</option>
-					</select>
+					<h3>Location</h3>
+					<div class="row">
+						<div class="col-md-3">
+							<label>City:</label>
+							<input class="form-control login-item" type="text" id="city" name="city" placeholder="City">
+						</div>
+						<div class="col-md-3">
+							<label>State:</label>
+							<input class="form-control login-item" type="text" id="state" name="state" placeholder="ST">
+						</div>
+						<div class="col-md-3">
+							<label>Zip:</label>
+							<input class="form-control login-item" type="text" id="zip" name="zip" placeholder="55555">
+						</div>
+					</div>
+					<h3>Home Specifications</h3>
+				    <div class="row">
+						<div class="col-md-3">
+							<label>Home Size:</label>
+							<select class="form-control login-item" name="sqftmin" id="sqftmin">
+						    	<option value="0">Any</option>
+								<option value="1000">1000+</option>
+								<option value="2000">2000+</option>
+								<option value="3000">3000+</option>
+								<option value="4000">4000+</option>
+								<option value="5000">5000+</option>
+							</select>
+						</div>
+						<div class="col-md-3">
+							<label>Lot Size:</label>
+							<select class="form-control login-item" name="lotsize" id="lotsize">
+								<option value="0">Any</option>
+								<option value="1000">1000+</option>
+								<option value="2000">2000+</option>
+								<option value="3000">3000+</option>
+								<option value="4000">4000+</option>
+								<option value="5000">5000+</option>
+							</select>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-md-3">
+							<label>Number of Beds:</label>
+							<select class="form-control login-item" name="beds" id="beds">
+						    	<option value="0">0+</option>
+								<option value="1">1+</option>
+								<option value="2">2+</option>
+								<option value="3">3+</option>
+								<option value="4">4+</option>
+								<option value="5">5+</option>
+								<option value="6">6+</option>
+							</select>
+						</div>
+						<div class="col-md-3">
+							<label>Number of Baths:</label>
+							<select class="form-control login-item" name="baths" id="baths">
+						    	<option value="0">0+</option>
+								<option value="1">1+</option>
+								<option value="2">2+</option>
+								<option value="3">3+</option>
+								<option value="4">4+</option>
+								<option value="5">5+</option>
+								<option value="6">6+</option>
+							</select>
+						</div>
+					</div>
+				    <label>Home Type:</label>
 					<div>
-						<label>SqFt</label>
-				    	<input type="text" id="sqftmin" name="sqftmin" placeholder="min">
-				    	<input type="text" id="sqftmax" name="sqftmax" placeholder="max">
+						<label><input type="checkbox" value="house" name="propertyType[]" checked>House</label>
+						<label><input type="checkbox" value="condo" name="propertyType[]" checked>Condo</label>
+						<label><input type="checkbox" value="townhome" name="propertyType[]" checked>Townhome</label>
+						<label><input type="checkbox" value="lotland" name="propertyType[]" checked>Lot/Land</label>
+						<label><input type="checkbox" value="apartment" name="propertyType[]" checked>Apartment</label>
+					</div>
+					<h3>Price</h3>
+					<div class="row">
+
+						<div class="col-md-3">
+							<label>Min:</label>
+							<select class="form-control login-item" name="pricemin" id="pricemin">
+						    	<option value="0">Any</option>
+								<option value="1">100K+</option>
+								<option value="2">200K+</option>
+								<option value="3">300K+</option>
+								<option value="4">400K+</option>
+								<option value="5">500K+</option>
+								<option value="6">600K+</option>
+								<option value="7">700K+</option>
+								<option value="8">800K+</option>
+								<option value="9">900K+</option>
+							</select>
+						</div>
+						<div class="col-md-3">
+							<label>Max:</label>
+							<select class="form-control login-item" name="pricemax" id="pricemax">
+								<option value="any">Any</option>
+								<option value="1">100K</option>
+								<option value="2">200K</option>
+								<option value="3">300K</option>
+								<option value="4">400K</option>
+								<option value="5">500K</option>
+								<option value="6">600K</option>
+								<option value="7">700K</option>
+								<option value="8">800K</option>
+								<option value="9">900K</option>
+							</select>
+						</div>
 					</div>
 				</div>
-				<div class="form-group">
-				    <div><label><h3>Type:</h3></label></div>
-					<label>
-						<input type="checkbox" value="house">
-						House
-					</label>
-					<label>
-						<input type="checkbox" value="condo">
-						Condo
-					</label>
-					<label>
-						<input type="checkbox" value="apartment">
-						Apartment
-					</label>
-					<label>
-						<input type="checkbox" value="townhome">
-						Town Home
-					</label>
-					<label>
-						<input type="checkbox" value="manufactured">
-						Manufactured
-					</label>
-					<label>
-						<input type="checkbox" value="lotland">
-						Lots/Land
-					</label>
-				</div>
-				<div class="form-group">
-					<div><label><h3>Price Range:</h3></label></div>
-				    <label>Min</label>
-				    <select>
-				    	<option value="0">0+</option>
-						<option value="100">100+</option>
-						<option value="200">200+</option>
-						<option value="300">300+</option>
-						<option value="400">400+</option>
-						<option value="500">500+</option>
-						<option value="600">600+</option>
-						<option value="700">700+</option>
-						<option value="800">800+</option>
-						<option value="900">900+</option>
-					</select>
-					<label>Max</label>
-				    <select>
-						<option value="any">Any</option>
-						<option value="100">100</option>
-						<option value="200">200</option>
-						<option value="300">300</option>
-						<option value="400">400</option>
-						<option value="500">500</option>
-						<option value="600">600</option>
-						<option value="700">700</option>
-						<option value="800">800</option>
-						<option value="900">900</option>
-					</select>
-				</div>
-				<div>
-					<button class="btn btn-lg btn-primary btn-block" type="submit" id="save">Save</button>
-					<button class="btn btn-lg btn-primary btn-block" type="button" id="skip">Skip</button>
+				<div class="row">
+					<input type="hidden" value="0" id="bid" name="bid" />
+					<div class="col-md-4">
+						<button class="btn btn-lg btn-real btn-block" type="submit" id="save">Save</button>
+					</div>
+					<div class="col-md-4">
+						<button class="btn btn-lg btn-real btn-block" type="button" id="skip">Skip</button>
+					</div>
 				</div>
 			</form>
 		</div> <!-- /container -->
@@ -158,5 +197,6 @@
 		<script src="resources/js/bootstrap.min.js"></script>
 		<script src="resources/js/cookie/jquery.cookie.js"></script>
 		<script src="resources/js/login.js"></script>
+		<script src="resources/js/setup.js"></script>
 	</body>
 </html>
