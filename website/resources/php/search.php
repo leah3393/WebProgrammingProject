@@ -397,7 +397,20 @@
 	}
 
 	function get_photo($pid){
-		return 'resources/images/property/449344_1.jpg';
+		global $db;
+
+		$photoQuery = "SELECT * FROM PICTURE WHERE pid = ".$pid." AND isPrimary = 1";
+
+		$result = $db->query($photoQuery);
+
+		if($result->num_rows == 1){
+			return 'resources/images/property/'.$pid.'_1.jpg';
+		}
+		else{
+			return 'resources/images/default.jpg';
+		}
+
+		//return 'resources/images/default.jpg';
 	}
 
 	function test_input($data){

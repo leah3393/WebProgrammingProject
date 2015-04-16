@@ -40,11 +40,11 @@ search = function(e) {
             var city = properties[p]["city"];
             var state = properties[p]["state"];
             var price = properties[p]["price"];
-            //var photo = properties[p]["photo"];
-            var photo = "resources/images/property/"+pid+"_1.jpg";
+            var photo = properties[p]["photo"];
+            /*var photo = "resources/images/property/"+pid+"_1.jpg";
             if(!ImageExist(photo)){
               photo = "resources/images/default.jpg";
-            }
+            }*/
             var fullAddr = addr + " " + city + ", " + state;
 
             html += '<div class="row"><div class="col-md-8 col-md-offset-2 col-lg-8 col-lg-offset-2"><div class="thumbnail"><img src="'+photo+'" alt="'+fullAddr+'"><div class="caption"><h3>'+fullAddr+'</h3><h4>Price: $'+price+'</h4><form action="resources/php/searchTest.php" method="POST"><input type="hidden" value="'+pid+'" name="pid" /><button class="btn btn-real" type="submit">View More Details</button>';
@@ -106,11 +106,11 @@ function checksearch(){
               var city = properties[p]["city"];
               var state = properties[p]["state"];
               var price = properties[p]["price"];
-              //var photo = properties[p]["photo"];
-              var photo = "resources/images/property/"+pid+"_1.jpg";
+              var photo = properties[p]["photo"];
+              /*var photo = "resources/images/property/"+pid+"_1.jpg";
               if(!ImageExist(photo)){
                 photo = "resources/images/default.jpg";
-              }
+              }*/
               var fullAddr = addr + " " + city + ", " + state;
 
               html += '<div class="row"><div class="col-md-8 col-md-offset-2 col-lg-8 col-lg-offset-2"><div class="thumbnail"><img src="'+photo+'" alt="'+fullAddr+'"><div class="caption"><h3>'+fullAddr+'</h3><h4>Price: $'+price+'</h4><form action="resources/php/searchTest.php" method="POST"><input type="hidden" value="'+pid+'" name="pid" /><button class="btn btn-real" type="submit">View More Details</button>';
