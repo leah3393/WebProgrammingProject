@@ -17,7 +17,7 @@ window.onload = function()
 
 function logoutFunction()
 {
-	window.location = 'adminLogin.html';
+	window.location = '../../adminLogin.html';
 }
 
 function scopepreserver(counter)

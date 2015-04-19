@@ -195,3 +195,11 @@ a, a:hover, a:focus{
 	border-radius: 4px;
 	margin-bottom: 20px;
 }
+.file-upload{
+	border-color: #d7d7d7;
+	background: #d7d7d7;
+	color: #323a45;
+	padding: 20px;
+	border-radius: 4px;
+	margin-bottom: 20px;
+}

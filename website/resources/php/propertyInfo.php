@@ -15,10 +15,14 @@
 			//$toEcho .= "";
 			$query = mysqli_query($con, "SELECT * FROM picture WHERE pid = " . $row['pid']);
 			$toEcho .= "<div class=\"images\" style=\"text-align: center\">";
+			//$count = 1;
 			while($innerRow = mysqli_fetch_array($query))
 			{
 				$imageID = $innerRow['pictureID'];
-				$toEcho .= "<img class=\"picture\" src='resources/php/image.php?id={$imageID}' hspace=\"10\" />";
+				$path = $innerRow['picture'];
+				//$path = "resources/images/property/10191985_4.jpg";
+				$toEcho .= "<img id=\"{$imageID}\"class=\"picture\" src=\"".$path."\" alt=\"".$path."\" hspace=\"10\" />";
+				//$count++;
 			}
 			$toEcho .= "</div>";
 			$toEcho .= "<div class=\"jumbotron\">"; //jumbotron
@@ -38,22 +42,24 @@
 			{
 				$findSeller = mysqli_query($con, "SELECT * FROM SELLER WHERE sid = " . $row['sellerID']);
 				$innerRow = mysqli_fetch_array($findSeller);
-				$toEcho .= "<p>Please contact " . $innerRow['fname'] . " " . $innerRow['lname'] . " from " . $innerRow['agency'] . " if you would like to purchase this home. Email " . $innerRow['email'] . " or call " . $innerRow['phone'];
+				$toEcho .= "<div class=\"jumbotron\">";
+				$toEcho .= "<p style=\"text-align: center\">Please contact " . $innerRow['fname'] . " " . $innerRow['lname'] . " from " . $innerRow['agency'] . " if you would like to purchase this home. Email " . $innerRow['email'] . " or call " . $innerRow['phone'];
 				$query2 = mysqli_query($con, "SELECT * FROM favorite WHERE pid = " . $row['pid'] . " AND bid = " . $_POST["sellerID"]);
 				if(mysqli_num_rows($query2) > 0)
 				{
-					$toEcho .= "<div class=\"row\">"; //row begins
+					$toEcho .= "<div class=\"row\" style=\"text-align: center\">"; //row begins
 					$toEcho .= "<p id=\"favoriteDescription\">This is one of your favorite properties!</p>";
 					$toEcho .= "</div>"; //row ends
 				}
 				else
 				{
-					$toEcho .= "<div class=\"row\">"; //row begins
-					$toEcho .= "<button id=\"favorite\"> Favorite this Property!</button>";
+					$toEcho .= "<div class=\"row\" style=\"text-align: center\">"; //row begins
+					$toEcho .= "<button class=\"btn btn-real\" id=\"favorite\" type=\"button\"> Favorite this Property!</button>";
 					$toEcho .= "<p id=\"propID\" hidden=\"hidden\">" . $_POST["propertyID"] . "</p>";
 					$toEcho .= "<p id=\"favoriteDescription\" hidden=\"hidden\">This is one of your favorite properties!</p>";
 					$toEcho .= "</div>"; //row ends
 				}
+				$toEcho .= "</div>";
 			}
 			elseif($_POST["buyer_seller"] == "seller")
 			{
@@ -71,12 +77,13 @@
 					<div class=\"col-md-2 col-md-offset-5\">
 					<input type=\"file\" name=\"image\">
 					</div></div>
-					<input type=\"submit\" name=\"submit\" value=\"Add Picture\"><input type=\"hidden\" id=\"pid\" name=\"pid\" value=\"" . $_POST["propertyID"] . "\" /></form>";
+					</br>
+					<input class=\"btn btn-real\" type=\"submit\" name=\"submit\" value=\"Add Picture\"><input type=\"hidden\" id=\"pid\" name=\"pid\" value=\"" . $_POST["propertyID"] . "\" /></form>";
 					$toEcho .= "<br>";
 					$toEcho .= "</div>"; //row ends
 					$toEcho .= "<div class=\"row\">"; //row begins
 					$toEcho .= "<p>Click this button and then click a picture above to delete it:</p>";
-					$toEcho .= "<button id=\"deletePics\">Delete Pictures</button>";
+					$toEcho .= "<button class=\"btn btn-real\" id=\"deletePics\">Delete Pictures</button>";
 					$toEcho .= "<br>";
 					$toEcho .= "<p id=\"deleteDescription\" hidden=\"hidden\">Click on a picture above to delete it</p>";
 					$toEcho .= "<br>";
@@ -132,13 +139,13 @@
 					$toEcho .= "<input value=\"" . $row['baths'] . "\" id=\"newBathrooms\"/>";
 					$toEcho .= "</div>"; //row ends
 					$toEcho .= "<div class=\"row\">"; //row begins
-					$toEcho .= "<button id=\"makeChanges\" name=\"makeChanges\" type=\"submit\">Make Changes</button>";
+					$toEcho .= "<button class=\"btn btn-real\"  id=\"makeChanges\" name=\"makeChanges\" type=\"submit\">Make Changes</button>";
 					$toEcho .= "</div>"; //row ends
 					$toEcho .= "<br>";
 					$toEcho .= "<div class=\"row\">"; //row begins
 					if($row['sold'] == 0)
 					{
-						$toEcho .= "<button id=\"homeSold\" name=\"homeSold\" type=\"submit\">Home Sold</button>";
+						$toEcho .= "<button class=\"btn btn-real\" id=\"homeSold\" name=\"homeSold\" type=\"submit\">Home Sold</button>";
 						$toEcho .= "<p id=\"homeSoldDescription\" hidden=\"hidden\">This home has been sold!</p>";
 					}
 					elseif($row['sold'] == 1)

@@ -81,8 +81,10 @@
 							<h1>
 								Account Information
 								<button id="edit" class="btn btn-real hidden-pane">Edit</button>
-								<button id="save" class="btn btn-real">Save</button>
+								<button id="save" class="btn btn-real">Save Changes</button>
 							</h1>
+							<div class="alert alert-info alert-dismissible" id="account-update" hidden>
+							</div>
 						</div>
 
 						<form id="accountform" autocomplete="off" method="post" accept-charset="UTF-8">
@@ -117,6 +119,7 @@
 								<div class="col-md-4">
 									<div class="form-group">
 										<label>Old Password:</label>
+										<input id="oldpass" hidden>
 										<input class="form-control login-item" type="password" id="opassword" name="password" placeholder="password">
 										<label>New Password:</label>
 										<input class="form-control login-item" type="password" id="npassword" name="npassword" placeholder="password">
@@ -127,7 +130,12 @@
 							</div>
 
 							<div id="buyerinfo">
-								<h3>Preferences</h3>
+								<h3>
+									Preferences 
+									<button class="btn btn-real" id="prefsearch" title="search based on preferences" type="button">
+										Search
+									</button>
+								</h3>
 								<div class="form-group">
 									<label>Location:</label>
 									<div class="row">
@@ -199,58 +207,37 @@
 										<label><input type="checkbox" value="lotland" name="propertyType[]" checked>Lot/Land</label>
 										<label><input type="checkbox" value="apartment" name="propertyType[]" checked>Apartment</label>
 									</div>
+									<label>Price:</label>
 									<div class="row">
 										<div class="col-md-3">
-											<label>Price:</label>
+											<label>Low</label>
 											<select class="form-control login-item" name="pricemin" id="pricemin">
 										    	<option value="0">Any</option>
-												<option value="1">100K+</option>
-												<option value="2">200K+</option>
-												<option value="3">300K+</option>
-												<option value="4">400K+</option>
-												<option value="5">500K+</option>
-												<option value="6">600K+</option>
-												<option value="7">700K+</option>
-												<option value="8">800K+</option>
-												<option value="9">900K+</option>
+												<option value="100000">100K+</option>
+												<option value="200000">200K+</option>
+												<option value="300000">300K+</option>
+												<option value="400000">400K+</option>
+												<option value="500000">500K+</option>
+												<option value="600000">600K+</option>
+												<option value="700000">700K+</option>
+												<option value="800000">800K+</option>
+												<option value="900000">900K+</option>
 											</select>
 										</div>
 										<div class="col-md-3">
-											<label>Price:</label>
+											<label>High</label>
 											<select class="form-control login-item" name="pricemax" id="pricemax">
 												<option value="any">Any</option>
-												<option value="1">100K</option>
-												<option value="2">200K</option>
-												<option value="3">300K</option>
-												<option value="4">400K</option>
-												<option value="5">500K</option>
-												<option value="6">600K</option>
-												<option value="7">700K</option>
-												<option value="8">800K</option>
-												<option value="9">900K</option>
+												<option value="100000">100K</option>
+												<option value="200000">200K</option>
+												<option value="300000">300K</option>
+												<option value="400000">400K</option>
+												<option value="500000">500K</option>
+												<option value="600000">600K</option>
+												<option value="700000">700K</option>
+												<option value="800000">800K</option>
+												<option value="900000">900K</option>
 											</select>
-										</div>
-									</div>
-								</div>
-							</div>
-							
-							<div id="sellinginfo" class="hidden-pane">
-								<h3>Selling Information</h3>
-								<div class="row">
-									<div class="col-md-6">
-										<div class="form-group">
-											<label>Company/Agency:</label>
-											<input class="form-control login-item" type="text" id="company" name="company" placeholder="company">
-										</div>
-									</div>
-								</div>
-								<div class="row">
-									<div class="col-md-6">
-										<div class="form-group">
-										<label>Address:</label>
-										<input class="form-control login-item" type="text" id="addrcity" name="addrcity" placeholder="City">
-										<input class="form-control login-item" type="text" id="addrstate" name="addrstate" placeholder="ST">
-										<input class="form-control login-item" type="text" id="addrzip" name="addrzip" placeholder="55555">
 										</div>
 									</div>
 								</div>

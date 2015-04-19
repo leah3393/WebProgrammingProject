@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+		<meta name="description" content="">
+		<meta name="author" content="">
+		<link rel="icon" type="image/png" href="resources/images/icon.png" />
+
+		<title>Online Realtor</title>
+		<link href="resources/css/bootstrap.min.css" rel="stylesheet">
+		<link href="resources/css/index.css" rel="stylesheet">
+	</head>
+
+	<body>
+
+		<!-- Fixed navbar -->
+		<nav class="navbar navbar-default navbar-fixed-top">
+			<div class="container">
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+						<span class="sr-only">Toggle navigation</span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+					<a class="navbar-brand" href="#">Online Realtor</a>
+				</div>
+				<div id="navbar" class="navbar-collapse collapse">
+					<ul class="nav navbar-nav navbar-right">
+						<li class="dropdown" id="user" style="display:none"><a href="#">Username</a></li>
+						<li class="dropdown" id="dropdown-login" style="display:none">
+							<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Login <span class="caret"></span></a>
+							<ul class="dropdown-menu" role="menu">
+								<form id="loginform" class="navbar-form" method="post">
+									<div class="form-group">
+									    <label for="email">Email</label>
+									    <input type="email" class="form-control login-item" id="email" name="email" placeholder="email">
+									</div>
+									<div class="form-group">
+									    <label for="password">Password</label>
+									    <input type="password" class="form-control login-item" id="password" name="password" placeholder="password">
+									</div>
+									
+									<div >
+									    <label>
+									      <input type="checkbox"> Remember Me
+									    </label>
+									</div>
+									<div>
+										<input class="btn btn-primary btn-block" type="submit" id="sign-in" value="Sign In">
+									</div>
+									<div id="fail"></div>
+								</form>
+							</ul>
+						</li>
+						<li id="register" style="display:none"><a href="register.html">Register</a></li>
+					</ul>
+				</div><!--/.nav-collapse -->
+			</div>
+		</nav>
+
+		<div class="container">
+			<div class="page-header">
+				<h1>Upload a new property! <small>Enter in the property information below to get started.</small></h1>
+			</div>
+			<form id="addPropertyForm" method="post" class="reg-start-form" accept-charset="UTF-8">
+				<div class="form-group">
+					<h3>Address</h3>
+					<div class="row">
+						<div class="col-md-6">
+							<label>Street Address:</label>
+							<input class="form-control login-item" type="text" id="addr" name="addr" placeholder="Addr" required>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-md-3">
+							<label>City:</label>
+							<input class="form-control login-item" type="text" id="city" name="city" placeholder="City" required>
+						</div>
+						<div class="col-md-3">
+							<label>State:</label>
+							<input class="form-control login-item" type="text" id="state" name="state" placeholder="ST" required>
+						</div>
+						<div class="col-md-3">
+							<label>Zip:</label>
+							<input class="form-control login-item" type="text" id="zip" name="zip" placeholder="55555">
+						</div>
+					</div>
+					<h3>Home Specifications</h3>
+				    <div class="row">
+						<div class="col-md-3">
+							<label>Home Size:</label>
+							
+							<div class="input-group">
+								<input class="form-control login-item" type="text" id="homeSize" name="homeSize" placeholder="Home Size">
+								<span class="input-group-addon">sqft</span>
+							</div>
+						</div>
+						<div class="col-md-3">
+							<label>Lot Size:</label>
+							<div class="input-group">
+								<input class="form-control login-item" type="text" id="lotSize" name="lotSize" placeholder="Lot Size">
+								<span class="input-group-addon">sqft</span>
+							</div>
+							
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-md-3">
+							<label>Number of Beds:</label>
+							<input class="form-control login-item" type="text" id="beds" name="beds" placeholder="beds">
+						</div>
+						<div class="col-md-3">
+							<label>Number of Baths:</label>
+							<input class="form-control login-item" type="text" id="baths" name="baths" placeholder="baths">
+						</div>
+					</div>
+				    
+				</br>
+					<div class="row">
+						<div class="col-md-4">
+							<label>Year Built:</label>
+							<input class="form-control login-item" type="text" id="yearBuilt" name="yearBuilt" placeholder="2010">
+						</div>
+						<div class="col-md-4">
+						    <label>Home Type:</label>
+							<div>
+								<select class="form-control login-item" id="typeID">
+								  <option value="0">House</option>
+								  <option value="1">Condo</option>
+								  <option value="3">Townhome</option>
+								  <option value="5">Lot/Land</option>
+								  <option value="2">Apartment</option>
+								</select>
+							</div>
+						</div>
+					</div>
+					<h3>Price</h3>
+					<div class="row">
+						<div class="col-md-4">
+							<div class="input-group">
+								<span class="input-group-addon">$</span>
+								<input class="form-control login-item" type="text" id="price" name="price" placeholder="100000">
+							</div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-md-6">
+							<label><h3>Description:</h3></label>
+							<textarea class="form-control" rows="3" id="description" name="description" placeholder="Description"></textarea>
+						</div>
+					</div>
+					<input hidden name="sid" id="sid"/>
+					<div class="row">
+						<div class="col-md-12">
+							<h3><em>Pictures are uploaded in the next step.</em></h3>
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<input type="hidden" value="0" id="bid" name="bid" />
+					<div class="col-md-4">
+						<button class="btn btn-lg btn-real btn-block" type="button" id="create">Create</button>
+						<button hidden type="submit" id="submit">submit</button>
+					</div>
+				</div>
+			</form>
+		</div> <!-- /container -->
+
+
+		<!-- Bootstrap core JavaScript
+		================================================== -->
+		<!-- Placed at the end of the document so the pages load faster -->
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+		<script src="resources/js/bootstrap.min.js"></script>
+		<script src="resources/js/cookie/jquery.cookie.js"></script>
+		<script src="resources/js/login.js"></script>
+		<script src="resources/js/newproperty.js"></script>
+
+	</body>
+</html>

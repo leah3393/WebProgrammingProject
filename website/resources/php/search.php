@@ -4,6 +4,7 @@
 	//$db = new mysqli('localhost','root','','realestate_db'); // <-- Toggle
 
 	$query = make_query();
+	$userid = test_input($_POST["userid"]);
 
 	$result = $db->query($query);
 
@@ -13,12 +14,14 @@
 	if($result){
 		while($row = $result->fetch_assoc()){
 			$photo = get_photo($row['pid']);
+			$favorite = get_favorite($row['pid']);
+			$verified = get_verified($row['sellerID']);
 			if($first){
-				$json .= '{"pid": "'.$row['pid'].'", "addr": "'.$row['addr'].'", "city": "'.$row['city'].'", "state": "'.$row['state'].'", "price": "'.$row['price'].'", "photo": "'.$photo.'"}';
+				$json .= '{"pid": "'.$row['pid'].'", "addr": "'.$row['addr'].'", "city": "'.$row['city'].'", "state": "'.$row['state'].'", "price": "'.$row['price'].'", "photo": "'.$photo.'", "favorite": "'.$favorite.'", "verified": "'.$verified.'"}';
 				$first = False;
 			}
 			else{
-				$json .= ',{"pid": "'.$row['pid'].'", "addr": "'.$row['addr'].'", "city": "'.$row['city'].'", "state": "'.$row['state'].'", "price": "'.$row['price'].'", "photo": "'.$photo.'"}';
+				$json .= ',{"pid": "'.$row['pid'].'", "addr": "'.$row['addr'].'", "city": "'.$row['city'].'", "state": "'.$row['state'].'", "price": "'.$row['price'].'", "photo": "'.$photo.'", "favorite": "'.$favorite.'", "verified": "'.$verified.'"}';
 			}
 		}
 		$result->free();
@@ -45,7 +48,7 @@
 					$params['state'] = $state;
 				}
 				else{
-					$state = get_state($loc[1]);
+					$state = trim(get_state($loc[1]));
 					$params['state'] = $state;
 					$params['city'] = $loc[0];
 				}
@@ -411,6 +414,41 @@
 		}
 
 		//return 'resources/images/default.jpg';
+	}
+	function get_verified($sellerID){
+		//return false;
+
+		global $db;
+		if($sellerID != null){
+			$query = "SELECT * FROM SELLER WHERE sid = ".$sellerID;
+
+			$result = $db->query($query);
+			$row = $result->fetch_assoc();
+
+			if($row["approved"] == 1){
+				return true;
+			}
+			else{
+				return false;
+			}
+		}
+		else{
+			return false;
+		}
+	}
+
+	function get_favorite($pid){
+		global $db, $userid;
+		$query = "SELECT * FROM FAVORITE WHERE pid = ".$pid." AND bid = ".$userid;
+
+		$result = $db->query($query);
+
+		if($result->num_rows == 1){
+			return true;
+		}
+		else{
+			return false;
+		}
 	}
 
 	function test_input($data){

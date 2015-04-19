@@ -1,5 +1,5 @@
 <?php
-	$con = mysqli_connect('localhost', 'root', '', 'realestate_db');
+	$con = mysqli_connect('localhost', 'root', 'root', 'realestate_db');
 	mysqli_select_db($con, "realestate_db");
 
 	mysqli_query($con, "UPDATE property SET addr = '" . $_POST["newAddress"] . "' WHERE pid = " . $_POST["propertyID"]);

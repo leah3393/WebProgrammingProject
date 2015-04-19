@@ -78,7 +78,7 @@ function deletePicture()
 		$(".images img").click(function()
 		{
 			var src = $(this).attr("src");
-			var id = src.substring(27);
+			var id = $(this).attr("id");
 			var input = {'pictureID': id};
 			$.ajax({
 				type: "POST",
@@ -122,7 +122,7 @@ function favorite(cookie2)
 		var input = {'buyerID': cookie2, 'propertyID': $("#propID").text()};
 		$.ajax({
 			type: "POST",
-			url: 'resources/php/favorite.php',
+			url: 'resources/php/favorites.php',
 			data: input,
 		  success: function(data){
 				//location.href='index.html';

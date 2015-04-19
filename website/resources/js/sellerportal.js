@@ -26,7 +26,7 @@ $(document).ready(function()
 				//}
 				var fullAddr = addr + " " + city + ", " + state;
 
-				html += '<div class="row"><div class="col-md-8 col-md-offset-2 col-lg-8 col-lg-offset-2"><div class="thumbnail"><img src="'+photo+'" alt="'+fullAddr+'"><div class="caption"><h3>'+fullAddr+'</h3><h4>Price: $'+price+'</h4><form action="resources/php/searchTest.php" method="POST"><input type="hidden" value="'+pid+'" name="pid" id="pid"/><button class="btn btn-real" type="submit">View More Details</button> <button id="'+pid+'" class="btn btn-real" type="button" onclick="removeProp(this)">Remove Listing</button>';
+				html += '<div class="row"><div class="col-md-8 col-md-offset-2 col-lg-8 col-lg-offset-2"><div class="thumbnail"><img src="'+photo+'" alt="'+fullAddr+'"><div class="caption"><h3>'+fullAddr+'</h3><h4>Price: $'+price+'</h4><form action="resources/php/searchTest.php" method="POST"><input type="hidden" value="'+pid+'" name="pid" id="pid"/><button class="btn btn-real" type="submit">View More Details</button> <button class="btn btn-real" type="button" onclick="remove(this)">Remove Listing</button>';
 
 				var pid = {'sellerID': cookie2};
 				$.ajax({
@@ -54,12 +54,10 @@ $(document).ready(function()
 	}
 });
 
-function removeProp(e){
+function remove(e){
 	//e.hide();
 
-	var pid = $(e).attr("id");
-
-	//alert(pid);
+	var pid = $("#pid").val();
 
 	var fd = {'pid':pid};
 	$.ajax({
@@ -72,5 +70,5 @@ function removeProp(e){
 	    },
 	    error: function() {alert("Error");} 
 	});
-    $(e).parent().parent().parent().parent().hide();
+    //$(e).parent().parent().parent().parent().hide();
 }

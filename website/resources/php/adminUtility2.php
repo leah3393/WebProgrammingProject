@@ -1,6 +1,6 @@
 <?php
 	$q = intval($_GET['q']);
-	$con = mysqli_connect('localhost', 'root', '', 'realestate_db');
+	$con = mysqli_connect('localhost', 'root', 'root', 'realestate_db');
 	if(!$con)
 	{
 		die('Could not connect: ' . mysqli_error($con));

@@ -29,13 +29,19 @@
 	
 	function get_photo($pid)
 	{
-		$con = mysqli_connect('localhost', 'root', '', 'realestate_db'); //toggle
-		//$con = mysqli_connect('localhost', 'root', 'root', 'realestate_db'); //toggle
-		$queryPhoto = mysqli_query($con, "SELECT * FROM picture WHERE pid = " . $pid . " AND isPrimary = 1");
-		$imageID;
-		while($row = mysqli_fetch_array($queryPhoto))
-			$imageID = $row['pictureID'];
+		global $db;
+
+		$photoQuery = "SELECT * FROM PICTURE WHERE pid = ".$pid." AND isPrimary = 1";
+
+		$result = $db->query($photoQuery);
+
+		if($result->num_rows == 1){
+			return 'resources/images/property/'.$pid.'_1.jpg';
+		}
+		else{
+			return 'resources/images/default.jpg';
+		}
 		
-		return "resources/php/image.php?id=" . $imageID;
+		//return "resources/php/image.php?id=" . $imageID;
 	}
 ?>

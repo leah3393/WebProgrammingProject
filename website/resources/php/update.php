@@ -16,20 +16,12 @@
 		$query .= getBuyerQuery($userid);
 	}
 	else{
-		$query .= getBuyerQuery($userid);
+		$query .= getSellerQuery($userid);
 	}
-
-	//echo $query;	
 
 	$db->query($query);
 
 	echo $query;
-
-	//$location = 'Location: ../../search-result.html' . $request;
-
-	//header($location);
-
-	//echo "success";
 
 	function getBuyerQuery($bid){
 		$query = "UPDATE BUYER SET ";
@@ -68,6 +60,18 @@
 					$first = false;
 				}
 				$query .= "phone='".$phone."'";
+			}
+		}
+		if(isset($_POST["password"])){
+			$password = test_input($_POST["password"]);
+			if($password != ""){
+				if(!$first){
+					$query .= ", ";
+				}
+				else{
+					$first = false;
+				}
+				$query .= "password='".$password."'";
 			}
 		}
 		if(isset($_POST["city"])){
@@ -194,6 +198,87 @@
 		}*/
 
 		$query .= " WHERE bid=" . $bid . ";";
+
+		return $query;
+	}
+
+	function getSellerQuery($sid){
+		$query = "UPDATE SELLER SET ";
+		$first = true;
+		if(isset($_POST["fname"])){
+			$fname = test_input($_POST["fname"]);
+			if($fname != ""){
+				if(!$first){
+					$query .= ", ";
+				}
+				else{
+					$first = false;
+				}
+				$query .= "fname='".$fname."'";
+			}
+		}
+		if(isset($_POST["lname"])){
+			$lname = test_input($_POST["lname"]);
+			if($lname != ""){
+				if(!$first){
+					$query .= ", ";
+				}
+				else{
+					$first = false;
+				}
+				$query .= "lname='".$lname."'";
+			}
+		}
+		if(isset($_POST["phone"])){
+			$phone = test_input($_POST["phone"]);
+			if($phone != ""){
+				if(!$first){
+					$query .= ", ";
+				}
+				else{
+					$first = false;
+				}
+				$query .= "phone='".$phone."'";
+			}
+		}
+		if(isset($_POST["password"])){
+			$password = test_input($_POST["password"]);
+			if($password != ""){
+				if(!$first){
+					$query .= ", ";
+				}
+				else{
+					$first = false;
+				}
+				$query .= "password='".$password."'";
+			}
+		}
+		if(isset($_POST["company"])){
+			$company = test_input($_POST["company"]);
+			if($company != ""){
+				if(!$first){
+					$query .= ", ";
+				}
+				else{
+					$first = false;
+				}
+				$query .= "agency='".$company."'";
+			}
+		}
+		if(isset($_POST["addr"])){
+			$addr = test_input($_POST["addr"]);
+			if($addr != ""){
+				if(!$first){
+					$query .= ", ";
+				}
+				else{
+					$first = false;
+				}
+				$query .= "addr='".$addr."'";
+			}
+		}
+
+		$query .= " WHERE sid=" . $sid . ";";
 
 		return $query;
 	}
