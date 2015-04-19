@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+		<meta name="description" content="">
+		<meta name="author" content="">
+		<link rel="icon" type="image/png" href="resources/images/icon.png" />
+
+		<title>Online Realtor</title>
+		<link href="resources/css/bootstrap.min.css" rel="stylesheet">
+		<link href="resources/css/index.css" rel="stylesheet">
+	</head>
+
+	<body>
+
+		<!-- Fixed navbar -->
+		<nav class="navbar navbar-default navbar-fixed-top">
+			<div class="container">
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+						<span class="sr-only">Toggle navigation</span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+					<a class="navbar-brand" href="index.html">Online Realtor</a>
+				</div>
+				<div id="navbar" class="navbar-collapse collapse">
+					<ul class="nav navbar-nav navbar-right">
+						<li class="dropdown" id="user" style="display:none"><a href="#">Username</a></li>
+						<li class="dropdown" id="dropdown-login" style="display:none">
+							<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Login <span class="caret"></span></a>
+							<ul class="dropdown-menu" role="menu">
+								<form id="loginform" class="navbar-form" method="post">
+									<div class="form-group">
+									    <label for="email">Email</label>
+									    <input type="email" class="form-control login-item" id="email" name="email" placeholder="email">
+									</div>
+									<div class="form-group">
+									    <label for="password">Password</label>
+									    <input type="password" class="form-control login-item" id="password" name="password" placeholder="password">
+									</div>
+									
+									<div >
+									    <label>
+									      <input type="checkbox"> Remember Me
+									    </label>
+									</div>
+									<div>
+										<input class="btn btn-primary btn-block" type="submit" id="sign-in" value="Sign In">
+									</div>
+									<div id="fail"></div>
+								</form>
+							</ul>
+						</li>
+						<li id="register" style="display:none"><a href="register.html">Register</a></li>
+					</ul>
+				</div><!--/.nav-collapse -->
+			</div>
+		</nav>
+
+		<div class="container-fluid">
+			<div class="row">
+				<div class="col-md-3 no-lr-padding account-menu">
+					<div class="left-menu">
+						<img class="house img-responsive" src="resources/images/house-big-white.png">
+						<h2 id="name">John Smith</h2>
+						<br>
+						<a class="btn btn-account btn-block btn-lg" href="sales-account-info.html" role="button">Account Info</a>
+						<a class="btn btn-account btn-block btn-lg" href="#" role="button">Seller Portal</a>
+						<button class="btn btn-account btn-block btn-lg" id="signout" type="button">Logout</button>
+					</div>
+				</div>
+				<div class="col-md-9 no-lr-padding col-md-offset-3">
+					<div class="right-area" class="settings-pane">
+						<div class="page-header">
+							<h1>Seller Portal</h1>
+							<button id="newProperty" class="btn btn-real" type="button">Add New Property</button>
+						</div>
+						
+						<div class="col-xs-8 col-md-8" id="search-results">
+						</div>
+					</div>
+				</div>
+			</div>
+		</div> <!-- /container -->
+
+
+		<!-- Bootstrap core JavaScript
+		================================================== -->
+		<!-- Placed at the end of the document so the pages load faster -->
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+		<script src="resources/js/bootstrap.min.js"></script>
+		<script src="resources/js/cookie/jquery.cookie.js"></script>
+		<!--<script src="resources/js/login.js"></script> -->
+		<script src="resources/js/edit.js"></script>
+		<script src="resources/js/portal.js"></script>
+		<script src="resources/js/sellerProperties.js"></script>
+	</body>
+</html>
